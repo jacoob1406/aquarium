@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    background: url("../images/aquarium.jpg") center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+img {
+    position: fixed;
+}
+
+#fish1Id {
+    left: 250px;
+    top: 250px;
+    width: 250px;
+    height: 250px;
+}
+
+#fish2Id {
+    left: 500px;
+    top: 250px;
+    width: 150px;
+    height: 150px;
+}
+
+.bubbleClass {
+    width: 100px;
+    height: 100px;
+}
+
+.howto {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    font-size: 5em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 15%;
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: none;
+}
+
+.helptext {
+    background-color: rgba(7, 37, 68, 0.9);
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    top: 25%;
+    line-height: 1.8;
+    text-align: center;
+    color: aliceblue;
+    padding: 1%;
+}
+
+ul{
+    list-style: none;
+}
+.escape{
+    position: absolute; 
+    top: 2px;
+    right: 2px;
+    cursor: pointer;
+}
+button{
+    width: 30%;
+    border: 0;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    #fish1Id {
+
+        width: 200px;
+        height: 200px;
+    }
+
+    #fish2Id {
+        width: 100px;
+        height: 100px;
+    }
+
+    .bubbleClass {
+        width: 75px;
+        height: 75px;
+    }
+}
