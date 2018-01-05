@@ -22,6 +22,12 @@ $("button").click(function () {
     $('.modal').fadeOut();
 });
 
+$(document).keyup(function (e) {
+    if (e.keyCode === 27) {
+        $('.modal').fadeOut();
+    }
+});
+
 //needed variables
 var w_blue = $("#fish2Id").width();
 var h_blue = $("#fish2Id").height();
@@ -50,22 +56,22 @@ $("#fish1Id").dblclick(function () {
 
 //Red fish go for click
 $(document).click(function (event) {
-    var X = event.pageX - 100;
-    var Y = event.pageY - 100;
+    let X = event.pageX - 100;
+    let Y = event.pageY - 100;
 
     $("#fish1Id").stop().animate({
         left: X,
         top: Y
     }, 500, function () {
-        animate_red_fish()
+        animate_red_fish();
     });
 });
 
 
 //Red Fish Move Randomly
 function animate_red_fish() {
-    var height = $(window).height() - h_red;
-    var width = $(window).width() - w_red;
+    let height = $(window).height() - h_red;
+    let width = $(window).width() - w_red;
 
     topheight = Math.floor(Math.random() * height);
     topwidth = Math.floor(Math.random() * width);
@@ -76,30 +82,31 @@ function animate_red_fish() {
     }, 2000, function () {
         animate_red_fish();
     });
-};
+}
+;
 
 
 //When we hoover the mouse over the blue fish it moves
 //to a random location
 
 $("#fish2Id").mouseover(function () {
-    var maxLeft = $(window).width() - w_blue;
-    var maxTop = $(window).height() - h_blue;
-    var leftPos = Math.floor(Math.random() * (maxLeft));
-    var topPos = Math.floor(Math.random() * (maxTop));
+    let maxLeft = $(window).width() - w_blue;
+    let maxTop = $(window).height() - h_blue;
+    let leftPos = Math.floor(Math.random() * (maxLeft));
+    let topPos = Math.floor(Math.random() * (maxTop));
     $("#fish2Id").stop().animate({
         left: leftPos,
         top: topPos
     }, 500, function () {
-        animate_blue_fish()
+        animate_blue_fish();
     });
 });
 
 //Blue Fish Move Randomly
 function animate_blue_fish() {
 
-    var height = $(window).height() - h_blue;
-    var width = $(window).width() - w_blue;
+    let height = $(window).height() - h_blue;
+    let width = $(window).width() - w_blue;
 
     topheight = Math.floor(Math.random() * height);
     topwidth = Math.floor(Math.random() * width);
@@ -110,12 +117,13 @@ function animate_blue_fish() {
     }, 2000, function () {
         animate_blue_fish();
     });
-};
+}
+;
 
 // Function for making random positions for the bubbles
 function positionBubble() {
-    var w = $(window).width() - 100;
-    var nw = Math.floor(Math.random() * w);
+    let w = $(window).width() - 100;
+    let nw = Math.floor(Math.random() * w);
     return [nw];
 }
 
@@ -139,7 +147,7 @@ $("#bubble3Id").click(function () {
 
 // constant random movement of the first bubble
 function animate_bubble1() {
-    var newPoz = positionBubble();
+    let newPoz = positionBubble();
     $("#bubble1Id").fadeIn(2000).animate({
         bottom: '100%', //start from the bottom 100% width
         left: newPoz[0] //random position
@@ -150,7 +158,7 @@ function animate_bubble1() {
 }
 // constant random movement of the second bubble
 function animate_bubble2() {
-    var newPoz = positionBubble();
+    let newPoz = positionBubble();
     $("#bubble2Id").fadeIn(2000).animate({
         bottom: '100%',
         left: newPoz[0]
@@ -161,7 +169,7 @@ function animate_bubble2() {
 }
 // constant random movement of the third bubble
 function animate_bubble3() {
-    var newPoz = positionBubble();
+    let newPoz = positionBubble();
     $("#bubble3Id").fadeIn(2000).animate({
         bottom: '100%',
         left: newPoz[0]
